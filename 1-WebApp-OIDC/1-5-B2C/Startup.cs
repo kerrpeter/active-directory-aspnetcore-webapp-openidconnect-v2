@@ -10,6 +10,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Identity.Web;
 using Microsoft.Identity.Web.UI;
+using Microsoft.IdentityModel.Logging;
 
 namespace WebApp_OpenIDConnect_DotNet
 {
@@ -53,6 +54,7 @@ namespace WebApp_OpenIDConnect_DotNet
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                IdentityModelEventSource.ShowPII = true;
             }
             else
             {
